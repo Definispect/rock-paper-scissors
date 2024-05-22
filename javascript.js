@@ -83,6 +83,25 @@ function playRound(humanChoice, computerChoice) {
     return;
 }
 
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        const play = playRound(getHumanChoice(), getComputerChoice());
 
+        if (play === null) {
+            console.log("You aborted the game :(")
+            break;
+        }
 
+        console.log(`Player ${humanScore}, Computer ${computerScore}`);
+    }
 
+    if (humanScore == computerScore) {console.log("It's a tie!")}
+    if (humanScore > computerScore) {console.log("You win!")}
+    if (humanScore < computerScore) {console.log("You lose!")}
+
+}
+
+let humanScore = 0;
+let computerScore = 0;
+
+playGame();
