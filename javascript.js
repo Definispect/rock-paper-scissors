@@ -2,13 +2,13 @@ function getComputerChoice() {
     let choiceNumber = Math.floor(Math.random()* 100) ;
 
     if (choiceNumber <= 33) {
-        return "rock";
+        return "Rock";
     }
     if (choiceNumber > 33 && choiceNumber < 66) {
-        return "paper";
+        return "Paper";
     }
     if (choiceNumber >= 66) {
-        return "scissors";
+        return "Scissors";
     }
 }
 
@@ -21,21 +21,68 @@ function getHumanChoice() {
         humanInput = humanInput.toLowerCase()
 
         if (humanInput == "rock" || humanInput == 1) {
-            console.log('You chose Rock');
-            return "rock";
+            return "Rock";
         }
         if (humanInput == "paper" || humanInput == 2) {
-            console.log("You chose Paper");
-            return "paper";
+            return "Paper";
         }
         if (humanInput == "scissors" || humanInput == 3) {
-            console.log("You chose Scissors");
-            return "scissors";
+            return "Scissors";
         }
 
         alert(`${humanInput} is not a valid choice. Please choose again.`)
     }   
 }
 
-getComputerChoice();
-getHumanChoice();
+function playRound(humanChoice, computerChoice) {
+    console.log(`Computer chose ${computerChoice}`);
+    console.log(`You chose ${humanChoice}`);
+
+    if (humanChoice == null) {return null;}
+
+    if (humanChoice == computerChoice) {
+        console.log(`You both chose ${humanChoice}, so it's a tie!`)
+        return;
+    }
+
+    if (humanChoice == "Rock") {
+        if (computerChoice == "Paper") {
+            console.log("Paper covers Rock. You lose.")
+            computerScore += 1;
+            
+        }
+        else {
+            console.log("Rock smashes Scissors. You win!")
+            humanScore +=1;
+        }
+    }
+
+    if (humanChoice == "Paper") {
+        if (computerChoice == "Scissors") {
+            console.log("Scissors cut Paper. You lose.")
+            computerScore += 1;
+            
+        }
+        else {
+            console.log("Paper covers Rock. You win!")
+            humanScore +=1;
+        }
+    }
+
+    if (humanChoice == "Scissors") {
+        if (computerChoice == "Rock") {
+            console.log("Rock smashes Scissors. You lose.")
+            computerScore += 1;
+            
+        }
+        else {
+            console.log("Scissors cut Paper. You win!")
+            humanScore +=1;
+        }
+    }
+    return;
+}
+
+
+
+
