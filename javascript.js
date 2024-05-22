@@ -35,8 +35,7 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    console.log(`Computer chose ${computerChoice}`);
-    console.log(`You chose ${humanChoice}`);
+    console.log(`Computer chose ${computerChoice}, You chose ${humanChoice}`);
 
     if (humanChoice == null) {return null;}
 
@@ -93,11 +92,12 @@ function playGame() {
         }
 
         console.log(`Player ${humanScore}, Computer ${computerScore}`);
+        console.log("");
     }
 
     if (humanScore == computerScore) {console.log("It's a tie!")}
-    if (humanScore > computerScore) {console.log("You win!")}
-    if (humanScore < computerScore) {console.log("You lose!")}
+    if (humanScore > computerScore) {console.log("You won the game! Lucky you!")}
+    if (humanScore < computerScore) {console.log("You lost the game. Try again!")}
 
 }
 
