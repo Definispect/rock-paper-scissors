@@ -35,9 +35,9 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    console.log(`Computer chose ${computerChoice}, You chose ${humanChoice}`);
-
     if (humanChoice == null) {return null;}
+
+    console.log(`Computer chose ${computerChoice}, You chose ${humanChoice}`);
 
     if (humanChoice == computerChoice) {
         console.log(`You both chose ${humanChoice}, so it's a tie!`)
@@ -83,6 +83,8 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
+    console.log("Welcome to Rock Paper Scissors in Javascript. You will play 5 rounds against the Computer. Use the prompt above to make your choice.");
+
     for (let i = 0; i < 5; i++) {
         const play = playRound(getHumanChoice(), getComputerChoice());
 
@@ -95,10 +97,10 @@ function playGame() {
         console.log("");
     }
 
+    if (humanScore == 0 && computerScore == 0) {return;}
     if (humanScore == computerScore) {console.log("It's a tie!")}
     if (humanScore > computerScore) {console.log("You won the game! Lucky you!")}
     if (humanScore < computerScore) {console.log("You lost the game. Try again!")}
-
 }
 
 let humanScore = 0;
