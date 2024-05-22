@@ -85,11 +85,14 @@ function playRound(humanChoice, computerChoice) {
 function playGame() {
     console.log("Welcome to Rock Paper Scissors in Javascript. You will play 5 rounds against the Computer. Use the prompt above to make your choice.");
 
+    let abort = 0;
+
     for (let i = 0; i < 5; i++) {
         const play = playRound(getHumanChoice(), getComputerChoice());
 
         if (play === null) {
             console.log("You aborted the game :(")
+            abort += 1;
             break;
         }
 
@@ -97,7 +100,7 @@ function playGame() {
         console.log("");
     }
 
-    if (humanScore == 0 && computerScore == 0) {return;}
+    if (abort == 1) {return;}
     if (humanScore == computerScore) {console.log("It's a tie!")}
     if (humanScore > computerScore) {console.log("You won the game! Lucky you!")}
     if (humanScore < computerScore) {console.log("You lost the game. Try again!")}
