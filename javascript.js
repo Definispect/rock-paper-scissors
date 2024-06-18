@@ -87,18 +87,16 @@ function playGame() {
 
     let abort = 0;
 
-    for (let i = 0; i < 5; i++) {
-        const play = playRound(getHumanChoice(), getComputerChoice());
 
-        if (play === null) {
-            console.log("You aborted the game :(")
-            abort += 1;
-            break;
-        }
+    const play = playRound(getHumanChoice(), getComputerChoice());
 
-        console.log(`Player ${humanScore}, Computer ${computerScore}`);
-        console.log("");
+    if (play === null) {
+        console.log("You aborted the game :(")
+        abort += 1;
     }
+
+    console.log(`Player ${humanScore}, Computer ${computerScore}`);
+    console.log("");
 
     if (abort == 1) {return;}
     if (humanScore == computerScore) {console.log("It's a tie!")}
