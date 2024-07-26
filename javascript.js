@@ -14,6 +14,11 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {
 
+    if (humanScore === 5 || computerScore === 5) {
+        console.log("It's over dude. Refresh the page if you wanna go again");
+        return;
+    }
+
     selectionsMessage.textContent = `Computer chose ${computerChoice}, You chose ${humanChoice}`;
 
     if (humanChoice == computerChoice) {
@@ -82,14 +87,14 @@ const selectionsMessage = document.querySelector(".selections");
 const winLossMessage = document.querySelector(".winLossStatement");
 const scoreMessage = document.querySelector(".score");
 
-rockButton.addEventListener('click', () => {
+rockButton.addEventListener('click', function rockPress() {
     playRound("Rock", getComputerChoice());
 });
 
-paperButton.addEventListener('click', () => {
+paperButton.addEventListener('click', function paperPress() {
     playRound("Paper", getComputerChoice());
 });
 
-scissorsButton.addEventListener('click', () => {
+scissorsButton.addEventListener('click', function scissorsPress() {
     playRound("Scissors", getComputerChoice());
 });
