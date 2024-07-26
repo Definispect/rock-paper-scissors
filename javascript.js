@@ -36,8 +36,6 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
 
-    if (humanChoice == null) {return null;}
-
     console.log(`Computer chose ${computerChoice}, You chose ${humanChoice}`);
 
     if (humanChoice == computerChoice) {
@@ -114,14 +112,17 @@ const scissorsButton = document.querySelector(".scissors");
 
 rockButton.addEventListener('click', () => {
     console.log('Rock button pressed');
+    playRound("Rock", getComputerChoice());
 });
 
 paperButton.addEventListener('click', () => {
     console.log('Paper button pressed');
+    playRound("Paper", getComputerChoice());
 });
 
 scissorsButton.addEventListener('click', () => {
     console.log('Scissors button pressed');
+    playRound("Scissors", getComputerChoice());
 });
 
 playGame();
