@@ -124,5 +124,3 @@ scissorsButton.addEventListener('click', () => {
     console.log('Scissors button pressed');
     playRound("Scissors", getComputerChoice());
 });
-
-playGame();
