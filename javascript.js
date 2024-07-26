@@ -78,6 +78,8 @@ function playRound(humanChoice, computerChoice) {
             humanScore +=1;
         }
     }
+
+    scoreMessage.textContent = `Player ${humanScore}, Computer ${computerScore}`;
     return;
 }
 
