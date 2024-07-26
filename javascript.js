@@ -36,7 +36,7 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
 
-    console.log(`Computer chose ${computerChoice}, You chose ${humanChoice}`);
+    selectionsMessage.textContent = `Computer chose ${computerChoice}, You chose ${humanChoice}`;
 
     if (humanChoice == computerChoice) {
         console.log(`You both chose ${humanChoice}, so it's a tie!`)
@@ -115,16 +115,13 @@ const winLossMessage = document.querySelector(".winLossStatement");
 const scoreMessage = document.querySelector(".score");
 
 rockButton.addEventListener('click', () => {
-    selectionsMessage.textContent = 'Rock button pressed';
     playRound("Rock", getComputerChoice());
 });
 
 paperButton.addEventListener('click', () => {
-    selectionsMessage.textContent = 'Paper button pressed';
     playRound("Paper", getComputerChoice());
 });
 
 scissorsButton.addEventListener('click', () => {
-    selectionsMessage.textContent = 'Scissors button pressed';
     playRound("Scissors", getComputerChoice());
 });
