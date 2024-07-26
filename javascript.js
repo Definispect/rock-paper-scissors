@@ -111,8 +111,16 @@ const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
 
-console.log(rockButton);
-console.log(paperButton);
-console.log(scissorsButton);
+rockButton.addEventListener('click', () => {
+    console.log('Rock button pressed');
+});
+
+paperButton.addEventListener('click', () => {
+    console.log('Paper button pressed');
+});
+
+scissorsButton.addEventListener('click', () => {
+    console.log('Scissors button pressed');
+});
 
 playGame();
