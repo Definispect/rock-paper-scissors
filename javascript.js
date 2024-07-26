@@ -110,17 +110,21 @@ const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
 
+const selectionsMessage = document.querySelector(".selections");
+const winLossMessage = document.querySelector(".winLossStatement");
+const scoreMessage = document.querySelector(".score");
+
 rockButton.addEventListener('click', () => {
-    console.log('Rock button pressed');
+    selectionsMessage.textContent = 'Rock button pressed';
     playRound("Rock", getComputerChoice());
 });
 
 paperButton.addEventListener('click', () => {
-    console.log('Paper button pressed');
+    selectionsMessage.textContent = 'Paper button pressed';
     playRound("Paper", getComputerChoice());
 });
 
 scissorsButton.addEventListener('click', () => {
-    console.log('Scissors button pressed');
+    selectionsMessage.textContent = 'Scissors button pressed';
     playRound("Scissors", getComputerChoice());
 });
