@@ -72,8 +72,10 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function gameOver() {
-    if (humanScore === 5) {console.log("You won the game! Lucky you!")}
-    if (computerScore === 5) {console.log("You lost the game. Try again!")}
+    if (humanScore === 5) {finalMessage.textContent = "You won the game! Lucky you!"}
+    if (computerScore === 5) {finalMessage.textContent = "You lost the game. Try again!"}
+
+    scoreMessage.after(finalMessage);
 }
 
 let humanScore = 0;
@@ -86,6 +88,8 @@ const scissorsButton = document.querySelector(".scissors");
 const selectionsMessage = document.querySelector(".selections");
 const winLossMessage = document.querySelector(".winLossStatement");
 const scoreMessage = document.querySelector(".score");
+
+const finalMessage = document.createElement("div");
 
 rockButton.addEventListener('click', function rockPress() {
     playRound("Rock", getComputerChoice());
