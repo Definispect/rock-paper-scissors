@@ -58,14 +58,17 @@ function playRound(humanChoice, computerChoice) {
     }
 
     scoreMessage.textContent = `Player ${humanScore}, Computer ${computerScore}`;
+
+    if (humanScore === 5 || computerScore === 5) {
+        fiveScoreReached();
+    }
+
     return;
 }
 
 function fiveScoreReached() {
-
-    if (humanScore == computerScore) {console.log("It's a tie!")}
-    if (humanScore > computerScore) {console.log("You won the game! Lucky you!")}
-    if (humanScore < computerScore) {console.log("You lost the game. Try again!")}
+    if (humanScore === 5) {console.log("You won the game! Lucky you!")}
+    if (computerScore === 5) {console.log("You lost the game. Try again!")}
 }
 
 let humanScore = 0;
