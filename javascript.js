@@ -39,42 +39,42 @@ function playRound(humanChoice, computerChoice) {
     selectionsMessage.textContent = `Computer chose ${computerChoice}, You chose ${humanChoice}`;
 
     if (humanChoice == computerChoice) {
-        console.log(`You both chose ${humanChoice}, so it's a tie!`)
+        winLossMessage.textContent = `You both chose ${humanChoice}, so it's a tie!`;
         return;
     }
 
     if (humanChoice == "Rock") {
         if (computerChoice == "Paper") {
-            console.log("Paper covers Rock. You lose.")
+            winLossMessage.textContent = "Paper covers Rock. You lose.";
             computerScore += 1;
             
         }
         else {
-            console.log("Rock smashes Scissors. You win!")
+            winLossMessage.textContent = "Rock smashes Scissors. You win!";
             humanScore +=1;
         }
     }
 
     if (humanChoice == "Paper") {
         if (computerChoice == "Scissors") {
-            console.log("Scissors cut Paper. You lose.")
+            winLossMessage.textContent = "Scissors cut Paper. You lose.";
             computerScore += 1;
             
         }
         else {
-            console.log("Paper covers Rock. You win!")
+            winLossMessage.textContent = "Paper covers Rock. You win!";
             humanScore +=1;
         }
     }
 
     if (humanChoice == "Scissors") {
         if (computerChoice == "Rock") {
-            console.log("Rock smashes Scissors. You lose.")
+            winLossMessage.textContent = "Rock smashes Scissors. You lose.";
             computerScore += 1;
             
         }
         else {
-            console.log("Scissors cut Paper. You win!")
+           winLossMessage.textContent = "Scissors cut Paper. You win!";
             humanScore +=1;
         }
     }
